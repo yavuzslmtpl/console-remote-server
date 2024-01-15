@@ -22,6 +22,8 @@ RUN npm run build
 
 # Copy nginx conf
 COPY docker/nginx.conf /etc/nginx/sites-available/default
+# Copy robots.txt
+COPY docker/robots.txt /app/build/
 
 EXPOSE 80
 CMD nginx && NODE_ENV=production npm run server
